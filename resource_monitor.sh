@@ -97,7 +97,7 @@ do
         # exclude the headline
         ps_output=$(ps -p "$pid" -o comm,pid,%cpu,rss | tail -n +2)
     elif [ ! -z "$program_name" ]; then
-        # filer by the program name
+        # filter by the program name
         ps_output=$(ps -eo comm,pid,%cpu,rss | grep "$program_name" | grep -v "grep")
     fi
 
