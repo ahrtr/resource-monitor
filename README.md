@@ -62,3 +62,11 @@ Timestamp, Relative Time(sec), Program, PID, CPU(%), Memory(RSS KB)
 2025-02-28 16:34:58, 20, ./bin/etcd, 4804, 222.3, 357376
 2025-02-28 16:35:03, 25, ./bin/etcd, 4804, 234.2, 357456
 ```
+
+You can render the data into line chart. See an example command below, you can input one or two csv files,
+
+```
+$ ./resource-monitor --data1 ./examples/etcd/testdata/test_report_3.5.18.csv --data2 ./examples/etcd/testdata/test_report_3.6.0-rc.1.csv
+```
+
+See the generated png file [line_chart.png](examples/etcd/testdata/line_chart.png)
