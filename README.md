@@ -16,18 +16,19 @@ Options:
 
 ## Examples
 
-Let's use etcd as an example to show how to monitor etcd's resource usage.
+Let's use etcd as an example to show how to monitor etcd's resource usage. See detailed steps below, or you can just
+to execute the `example_monitor_etcd.sh` directly.
 
 ### Step 1: start etcd and play traffic
 
 Firstly start etcd,
 ```
-$ ./bin/etcd --quota-backend-bytes=4300000000
+$ ./bin/etcd --quota-backend-bytes=8600000000
 ```
 
 Afterwards, play traffic in another terminal,
 ```
-$ bin/tools/benchmark txn-put --endpoints="http://127.0.0.1:2379" --clients=200 --conns=200 --key-space-size=4000000000 --key-size=128 --val-size=10240  --total=200000 --rate=40000
+$ bin/tools/benchmark txn-put --endpoints="http://127.0.0.1:2379" --clients=200 --conns=200 --key-space-size=4000000000 --key-size=128 --val-size=10240  --total=600000 --rate=40000
 ```
 
 ### Step 2: monitor the resource usage
