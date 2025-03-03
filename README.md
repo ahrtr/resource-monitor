@@ -17,7 +17,7 @@ Options:
 ## Examples
 
 Let's use etcd as an example to show how to monitor etcd's resource usage. See detailed steps below, or you can just
-to execute the `example_monitor_etcd.sh` directly.
+to execute the [example_monitor_etcd.sh](examples/etcd/example_monitor_etcd.sh) directly.
 
 ### Step 1: start etcd and play traffic
 
