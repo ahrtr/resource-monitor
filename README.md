@@ -36,6 +36,9 @@ $ bin/tools/benchmark txn-put --endpoints="http://127.0.0.1:2379" --clients=200 
 When the etcd is running, execute any of the following command to monitor its resource usage,
 
 - Monitor process with PID 70500
+
+Assuming 70500 is the PID of etcd,
+
 ```
 $./resource_monitor.sh --pid 70500
 ```
