@@ -3,7 +3,7 @@ A tool to monitor any program's resource usage (memory, cpu)
 
 ## Usage
 ```
-F5WPP69Q7H:resource-monitor wachao$ ./resource_monitor.sh -h
+$ ./resource_monitor.sh -h
 Usage: ./resource_monitor.sh [OPTIONS]
 
 Options:
@@ -15,6 +15,24 @@ Options:
 ```
 
 ## Examples
+
+Let's use etcd as an example to show how to monitor etcd's resource usage.
+
+### Step 1: start etcd and play traffic
+
+Firstly start etcd,
+```
+$ ./bin/etcd --quota-backend-bytes=4300000000
+```
+
+Afterwards, play traffic in another terminal,
+```
+$ bin/tools/benchmark txn-put --endpoints="http://127.0.0.1:2379" --clients=200 --conns=200 --key-space-size=4000000000 --key-size=128 --val-size=10240  --total=200000 --rate=40000
+```
+
+### Step 2: monitor the resource usage
+
+When the etcd is running, execute any of the following command to monitor its resource usage,
 
 - Monitor process with PID 70500
 ```
