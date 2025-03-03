@@ -103,7 +103,7 @@ do
 
     if [ ! -z "$ps_output" ]; then
         # convert into CSV format
-        echo "$timestamp, $relative_time, $(echo "$ps_output" | awk '{print $1", "$2", "$3", "$4}')" >> "$output_file"
+        echo "$timestamp, $relative_time, $(echo "$ps_output" | awk '{print $1", "$2", "$3", "$4}')" | tee -a "$output_file"
     else
         # Stop monitoring if the program isn't running
         if [ ! -z "$pid" ]; then
